@@ -1,1 +1,7 @@
-node_modules/
+.idea/
+*/.idea/workspace.xml
+*/.idea/tasks.xml
+./meteor/local
+local
+.meteor\meteorite
+*.iws
