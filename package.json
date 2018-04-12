@@ -1,0 +1,12 @@
+{
+  "name": "overwatch",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.42",
+    "jsxapi": "^4.1.3",
+    "meteor-node-stubs": "^0.3.2"
+  }
+}
