@@ -1,6 +1,7 @@
 {
   "less": {
     "customVariables": false,
+
     "exposeMixins": false,
     "compile": true,
     "modules": {
@@ -60,5 +61,5 @@
       "transition": true
     }
   },
-  "version": 3
+  "version": 2
 }

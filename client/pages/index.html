@@ -1,10 +1,4 @@
 <template name="index">
-
-    <!--     <form>
-            <input type="submit" value="Click Me">
-        </form> -->
-
-
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <body class="home">
@@ -12,9 +6,10 @@
         <div class="row display-table-row">
             <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
                 <div class="logo">
-                    <a hef="home.html"><img src="http://jskrishna.com/work/merkury/images/logo.png" alt="merkery_logo"
+                    <a hef="home.html"><img src="http://jskrishna.com/work/merkury/images/logo.png"
+                                            alt="Cisco Overwatch"
                                             class="hidden-xs hidden-sm">
-                        <img src="http://jskrishna.com/work/merkury/images/circle-logo.png" alt="merkery_logo"
+                        <img src="http://jskrishna.com/work/merkury/images/circle-logo.png" alt="Cisco Overwatch"
                              class="visible-xs visible-sm circle-logo">
                     </a>
                 </div>
@@ -69,14 +64,15 @@
                                     </li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
-                                                src="http://jskrishna.com/work/merkury/images/user-pic.jpg" alt="user">
+                                                src="http://jskrishna.com/work/merkury/images/user-pic.jpg"
+                                                alt="Profile">
                                             <b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li>
                                                 <div class="navbar-content">
-                                                    <span>JS Krishna</span>
+                                                    <span>Rich Liu</span>
                                                     <p class="text-muted small">
-                                                        me@jskrishna.com
+                                                        richarli@cisco.com
                                                     </p>
                                                     <div class="divider">
                                                     </div>
@@ -91,44 +87,48 @@
                     </header>
                 </div>
                 <div class="user-dashboard">
-                    <h1>Hello, JS</h1>
+                    <h1>Hello IR Team</h1>
                     <div class="row">
-                        <div class="col-md-5 col-sm-5 col-xs-12 gutter">
+                        <div class="col-md-6 col-sm-6 col-xs-12 gutter">
 
                             <div class="sales">
-                                <h2>Your Sale</h2>
-
+                                <h2>Select Building</h2>
                                 <div class="btn-group">
                                     <button class="btn btn-secondary btn-lg dropdown-toggle" type="button"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span>Period:</span> Last Year
+                                        <span>Bedfont Lakes</span> BDLK
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a href="#">2012</a>
-                                        <a href="#">2014</a>
-                                        <a href="#">2015</a>
-                                        <a href="#">2016</a>
+                                        <a href="#">BDLK10</a>
+                                        <a href="#">BDLK11</a>
+                                        <a href="#">BDLK09</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-7 col-sm-7 col-xs-12 gutter">
 
-                            <div class="sales report">
-                                <h2>Report</h2>
-                                <div class="btn-group">
-                                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span>Period:</span> Last Year
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a href="#">2012</a>
-                                        <a href="#">2014</a>
-                                        <a href="#">2015</a>
-                                        <a href="#">2016</a>
-                                    </div>
-                                </div>
+                            <div class='col-md-4 col-sm-4 col-xs-12 gutter'>
+                                <form>
+                                    <input type="submit" value="Do A Thing">
+                                </form>
                             </div>
+
+                            <!--<div class="sales report">-->
+                            <!--<h2>Report</h2>-->
+                            <!--<div class="btn-group">-->
+                            <!--<button class="btn btn-secondary btn-lg dropdown-toggle" type="button"-->
+                            <!--data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                            <!--<span>Period:</span> Last Year-->
+                            <!--</button>-->
+                            <!--<div class="dropdown-menu">-->
+                            <!--<a href="#">2012</a>-->
+                            <!--<a href="#">2014</a>-->
+                            <!--<a href="#">2015</a>-->
+                            <!--<a href="#">2016</a>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
                         </div>
                     </div>
                 </div>
@@ -136,9 +136,6 @@
         </div>
 
     </div>
-    <form>
-        <input type="submit" value="Click Me">
-    </form>
 
     <!-- Modal -->
     <div id="add_project" class="modal fade" role="dialog">
@@ -153,8 +150,8 @@
                 <div class="modal-body">
                     <input type="text" placeholder="Project Title" name="name">
                     <input type="text" placeholder="Post of Post" name="mail">
-                    <input type="text" placeholder="Author" name="passsword">
-                    <textarea placeholder="Desicrption"></textarea>
+                    <input type="text" placeholder="Author" name="password">
+                    <textarea placeholder="Description"></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="cancel" data-dismiss="modal">Close</button>
