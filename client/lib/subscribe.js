@@ -4,8 +4,9 @@ import {Template} from 'meteor/templating';
 Template.index.events({
     'submit form': function (event) {
         event.preventDefault();
-        console.log("Ping");
-        Meteor.call('login');
         Meteor.call('get_volume');
+        Meteor.call('get_presence');
+        Meteor.call('get_count');
+        Meteor.call('set_alert_message');
     }
 });

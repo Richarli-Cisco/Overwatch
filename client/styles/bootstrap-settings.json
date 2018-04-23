@@ -1,6 +1,7 @@
 {
   "less": {
     "customVariables": false,
+
     "exposeMixins": false,
     "compile": true,
     "modules": {

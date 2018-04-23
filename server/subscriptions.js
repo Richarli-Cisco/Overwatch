@@ -27,7 +27,7 @@ Meteor.methods({
         });
     },
 
-    'set_alert_message': function (new_msg) {
+    'get_presence': function () {
         const jsxapi = require('jsxapi');
 
         // Connect over ssh to a codec
@@ -35,7 +35,36 @@ Meteor.methods({
             username: 'integrator',
             password: 'integrator',
         });
-        xapi.command('UserInterface Message Alert Display', {Text: new_msg});
+        // Set up a call
+        xapi.status
+            .get('RoomAnalytics PeoplePresence').then((presence) => {
+            console.log(presence);
+        });
+    },
+    'get_count': function () {
+        const jsxapi = require('jsxapi');
+
+        // Connect over ssh to a codec
+        const xapi = new jsxapi.connect('ssh://integrator@10.230.105.193', {
+            username: 'integrator',
+            password: 'integrator',
+        });
+        // Set up a call
+        xapi.status
+            .get('RoomAnalytics PeopleCount current').then((count) => {
+            console.log(count);
+        });
+    },
+
+    'set_alert_message': function () {
+        const jsxapi = require('jsxapi');
+
+        // Connect over ssh to a codec
+        const xapi = new jsxapi.connect('ssh://integrator@10.230.105.193', {
+            username: 'integrator',
+            password: 'integrator',
+        });
+        xapi.command('UserInterface Message Alert Display', {Text: "Matt Damon"});
     },
 
     'hey_listen': function () {
