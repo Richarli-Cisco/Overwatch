@@ -24,7 +24,9 @@ Meteor.methods({
         xapi.status
             .get('Audio Volume').then((volume) => {
             console.log(volume);
+            return volume;
         });
+
     },
 
     'get_presence': function () {
@@ -53,6 +55,7 @@ Meteor.methods({
         xapi.status
             .get('RoomAnalytics PeopleCount current').then((count) => {
             console.log(count);
+            return count;
         });
     },
 
