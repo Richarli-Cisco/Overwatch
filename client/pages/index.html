@@ -147,6 +147,25 @@
                             <!--</div>-->
                         </div>
                     </div>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12 gutter">
+                        <link href="/path/to/css//css/fileinput.min.css" rel="stylesheet">
+                        <link href="/path/to/css//css/fileinput-rtl.min.css" rel="stylesheet">
+                        <div dir=rtl class="file-loading"> <!-- note the direction if you want to display file-loading indicator -->
+                            <!-- note that your input must just set the `rtl` data property of the plugin or in your javascript code -->
+                            <input id="input-b8" name="input-b8[]" multiple type="file">
+                        </div>
+                        <script>
+                        $(document).on('ready', function() {
+                            $("#input-b8").fileinput({
+                                rtl: true,
+                                dropZoneEnabled: true,
+                                allowedFileExtensions: ["txt", "xls"]
+                            });
+                        });
+                        </script>
+                      </div>
+                    </div>
                 </div>
             </div>
         </div>
