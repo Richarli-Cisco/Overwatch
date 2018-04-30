@@ -12,7 +12,7 @@ Meteor.methods({
         });
     },
 
-    'get_volume': function () {
+    'get_volume': async function () {
         const jsxapi = require('jsxapi');
 
         // Connect over ssh to a codec
@@ -20,12 +20,21 @@ Meteor.methods({
             username: 'integrator',
             password: 'integrator',
         });
-        // Set up a call
-        xapi.status
-            .get('Audio Volume').then((volume) => {
-            console.log(volume);
-            return volume;
-        });
+        volume = await asyncVolumeCall(xapi);
+        console.log(volume);
+
+        function asyncVolumeCall(xapi) {
+          return new Promise(resolve => {
+            // Set up a call
+            xapi.status
+                .get('Audio Volume').then((volume) => {
+                resolve(volume);
+            })
+            .catch( (error) => {
+              console.log(error);
+            });
+          });
+        }
 
     },
 
@@ -43,20 +52,29 @@ Meteor.methods({
             console.log(presence);
         });
     },
-    'get_count': function () {
+    'get_count': async function (ip_address) {
         const jsxapi = require('jsxapi');
-
         // Connect over ssh to a codec
-        const xapi = new jsxapi.connect('ssh://integrator@10.230.105.193', {
+        const xapi = new jsxapi.connect('ssh://integrator@' + ip_address, {
             username: 'integrator',
             password: 'integrator',
         });
-        // Set up a call
-        xapi.status
-            .get('RoomAnalytics PeopleCount current').then((count) => {
-            console.log(count);
-            return count;
-        });
+
+        count = await asyncCountCall(xapi);
+        console.log(count);
+
+        function asyncCountCall(xapi) {
+          return new Promise(resolve => {
+            // Set up a call
+            xapi.status
+                .get('RoomAnalytics PeopleCount current').then((count) => {
+                resolve(count);
+              })
+            .catch( (error) => {
+              console.log('There was a problem connecting to this device');
+            });
+          });
+        }
     },
 
     'set_alert_message': function () {
@@ -86,4 +104,11 @@ Meteor.methods({
         // De-register feedback
         off();
     },
+
+    'get_all_counts': function () {
+      for (i=0; i<=1; i++) {
+        Meteor.call('get_count', '10.230.105.193',);
+    }
+    },
+
 });
