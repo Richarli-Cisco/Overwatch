@@ -77,7 +77,7 @@ Meteor.methods({
         }
     },
 
-    'set_alert_message': function () {
+    'set_alert_message': async function () {
         const jsxapi = require('jsxapi');
 
         // Connect over ssh to a codec
@@ -85,7 +85,7 @@ Meteor.methods({
             username: 'integrator',
             password: 'integrator',
         });
-        xapi.command('UserInterface Message Alert Display', {Text: "Matt Damon"});
+        xapi.command('UserInterface Message Alert Display', {Text: "Matt Damon"} );
     },
 
     'hey_listen': function () {
@@ -105,10 +105,37 @@ Meteor.methods({
         off();
     },
 
+
+    'connectCalls': async function () {
+        const jsxapi = require('jsxapi');
+
+        // Connect over ssh to a codec
+        const xapi = new jsxapi.connect('ssh://integrator@10.230.105.193', {
+            username: 'integrator',
+            password: 'integrator',
+        });
+        xapi.command('Dial', { Number: 'hburke@cisco.com' });
+    },
+    'disconnectCalls': async function () {
+        const jsxapi = require('jsxapi');
+
+        // Connect over ssh to a codec
+        const xapi = new jsxapi.connect('ssh://integrator@10.230.105.193', {
+            username: 'integrator',
+            password: 'integrator',
+        });
+        xapi.command('Call Disconnect');
+    },
+
     'get_all_counts': function () {
       for (i=0; i<=1; i++) {
         Meteor.call('get_count', '10.230.105.193',);
     }
     },
+    // 'set_all_alerts': function () {
+    //   for (i=0; i<=1; i++) {
+    //     Meteor.call('set_alert_message', '10.230.105.193',);
+    // }
+    // },
 
 });
