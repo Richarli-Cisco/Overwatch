@@ -24,16 +24,16 @@ Meteor.methods({
         console.log(volume);
 
         function asyncVolumeCall(xapi) {
-          return new Promise(resolve => {
-            // Set up a call
-            xapi.status
-                .get('Audio Volume').then((volume) => {
-                resolve(volume);
-            })
-            .catch( (error) => {
-              console.log(error);
+            return new Promise(resolve => {
+                // Set up a call
+                xapi.status
+                    .get('Audio Volume').then((volume) => {
+                    resolve(volume);
+                })
+                    .catch((error) => {
+                        console.log(error);
+                    });
             });
-          });
         }
 
     },
@@ -64,16 +64,16 @@ Meteor.methods({
         console.log(count);
 
         function asyncCountCall(xapi) {
-          return new Promise(resolve => {
-            // Set up a call
-            xapi.status
-                .get('RoomAnalytics PeopleCount current').then((count) => {
-                resolve(count);
-              })
-            .catch( (error) => {
-              console.log('There was a problem connecting to this device');
+            return new Promise(resolve => {
+                // Set up a call
+                xapi.status
+                    .get('RoomAnalytics PeopleCount current').then((count) => {
+                    resolve(count);
+                })
+                    .catch((error) => {
+                        console.log('There was a problem connecting to this device');
+                    });
             });
-          });
         }
     },
 
@@ -128,9 +128,9 @@ Meteor.methods({
     },
 
     'get_all_counts': function () {
-      for (i=0; i<=1; i++) {
-        Meteor.call('get_count', '10.230.105.193',);
-    }
+        for (i = 0; i <= 1; i++) {
+            Meteor.call('get_count', '10.230.105.193',);
+        }
     },
     // 'set_all_alerts': function () {
     //   for (i=0; i<=1; i++) {
