@@ -23,9 +23,13 @@ Meteor.startup(() => {
   RoomKitDB.insert(VCEndpoint2);
 
 
-  var result = RoomKitDB.findOne();
+  var result_cursor = RoomKitDB.find();
 
-  console.log(result);
+  var result_array = result_cursor.fetch();
+
+  console.log(result_array);
+
+
 
 
 });
