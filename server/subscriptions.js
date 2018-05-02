@@ -106,6 +106,7 @@ Meteor.methods({
     },
 
     'get_all_counts': function () {
+
       for (i=0; i<=1; i++) {
         Meteor.call('get_count', '10.230.105.193',);
     }
