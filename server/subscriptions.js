@@ -1,6 +1,5 @@
 import {Meteor} from 'meteor/meteor'
 
-
 Meteor.methods({
     'login': function () {
         const jsxapi = require('jsxapi');
@@ -20,8 +19,9 @@ Meteor.methods({
             username: 'integrator',
             password: 'integrator',
         });
-        volume = await asyncVolumeCall(xapi);
+        var volume = await asyncVolumeCall(xapi);
         console.log(volume);
+        return volume;
 
         function asyncVolumeCall(xapi) {
             return new Promise(resolve => {
@@ -38,7 +38,7 @@ Meteor.methods({
 
     },
 
-    'get_presence': function () {
+    'get_presence': async function () {
         const jsxapi = require('jsxapi');
 
         // Connect over ssh to a codec
@@ -49,10 +49,12 @@ Meteor.methods({
         // Set up a call
         xapi.status
             .get('RoomAnalytics PeoplePresence').then((presence) => {
+
             console.log(presence);
         });
     },
-    'get_count': async function (ip_address) {
+    'get_count': async function () {
+        const ip_address = '10.230.105.193';
         const jsxapi = require('jsxapi');
         // Connect over ssh to a codec
         const xapi = new jsxapi.connect('ssh://integrator@' + ip_address, {
@@ -60,9 +62,9 @@ Meteor.methods({
             password: 'integrator',
         });
 
-        count = await asyncCountCall(xapi);
+        var count = await asyncCountCall(xapi);
         console.log(count);
-
+        return count;
         function asyncCountCall(xapi) {
             return new Promise(resolve => {
                 // Set up a call
@@ -75,6 +77,16 @@ Meteor.methods({
                     });
             });
         }
+
+        // RoomKitDB.update('PeopleCount', count);
+        //
+        // var result_cursor = RoomKitDB.find();
+        //
+        // var result_array = result_cursor.fetch();
+        //
+        // console.log(result_array);
+        // console.log(RoomKitDB.fetch)
+
     },
 
     'set_alert_message': async function () {
