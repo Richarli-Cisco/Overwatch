@@ -120,7 +120,30 @@
 
                             <div class='col-md-4 col-sm-4 col-xs-12 gutter'>
                                 <form>
-                                    <input type="submit" value="Do A Thing">
+                                    <input type="submit" value="Get People Count" class="getPeopleCount">
+                                </form>
+                            </div>
+
+                            <div class='col-md-4 col-sm-4 col-xs-12 gutter'>
+                                <form>
+                                    <input type="submit" value="Send Alert Message" class="setAlertMessage">
+                                </form>
+                            </div>
+
+                            <div class='col-md-4 col-sm-4 col-xs-12 gutter'>
+                                <form>
+                                    <input type="submit" value="Make Call" class="connectCalls">
+                                </form>
+                            </div>
+
+                            <div class='col-md-4 col-sm-4 col-xs-12 gutter'>
+                                <form>
+                                    <input type="submit" value="Disconnect Calls" class="disconnectCalls">
+                                </form>
+                            </div>
+                            <div class='col-md-4 col-sm-4 col-xs-12 gutter'>
+                                <form>
+                                    <input type="submit" value="Demo Button" class="doROdge">
                                 </form>
                             </div>
 
@@ -140,6 +163,41 @@
                             <!--</div>-->
                             <!--</div>-->
                         </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12 gutter">
+                        <link href="/path/to/css//css/fileinput.min.css" rel="stylesheet">
+                        <link href="/path/to/css//css/fileinput-rtl.min.css" rel="stylesheet">
+                        <div dir=rtl class="file-loading"> <!-- note the direction if you want to display file-loading indicator -->
+                            <!-- note that your input must just set the `rtl` data property of the plugin or in your javascript code -->
+                            <input id="input-b8" name="input-b8[]" multiple type="file">
+                        </div>
+                        <script>
+                        $(document).on('ready', function() {
+                            $("#input-b8").fileinput({
+                                rtl: true,
+                                dropZoneEnabled: true,
+                                allowedFileExtensions: ["txt", "xls"]
+                            });
+                        });
+                        </script>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                      </div>
+                      <div class="col-md-4">
+                        <div class="results_pane">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                      </div>
+                    </div>
+                </div>
+                <br><br>
+                <div class="container">
+                    <div class="col-sm-4" style="border-style: solid;">
+                        <div id="output_box"></div>
                     </div>
                 </div>
             </div>
