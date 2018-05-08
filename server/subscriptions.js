@@ -97,7 +97,9 @@ Meteor.methods({
             username: 'integrator',
             password: 'integrator',
         });
-        xapi.command('UserInterface Message Alert Display', {Text: "Matt Damon"} );
+        xapi.command('UserInterface Message Alert Display', {
+          Title: "Emergency Incident",
+          Text: "Would all emergency responders please attend an incident at the VEC"});
     },
 
     'hey_listen': function () {
